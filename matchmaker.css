@@ -1,2 +1,12 @@
-body {background-color: azure}
-h1 {color: darkblue}
+body {
+    background-color: azure
+}
+h1 {
+    color: darkblue
+}
+label {
+    color: red
+}
+button {
+    color: green
+}
