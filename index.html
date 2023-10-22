@@ -15,7 +15,7 @@
 
 <body>
     <h1>Matchmaker</h1>
-    <p>Welcome to Chuckie Gentile's Matchmaker site! The following five statements may or may not be designed to trick you...For each of the statements, select using the dropdown menu whether you Strongly Agree, Agree, Neither Agree nor Disagree, Disagree, or Strongly Disagree with them. Once you have finished selecting your responses, click the "Calculate Compatibility" button. After this, a percentage indicating how compatible you are with me (Chuckie Gentile) will display. Under it, there will be a comment based on how like-minded we are. Good luck, and I hope you enjoy!</p>
+    <p>Welcome to Chuckie Gentile's Matchmaker site! The following five statements may or may not be designed to trick you...For each of the statements, select using the dropdown menu whether you Strongly Agree, Agree, Neither Agree nor Disagree, Disagree, or Strongly Disagree with them. Once you have finished selecting your responses, click the "Calculate Compatibility" button. After this, values from 1 through 5 will appear for each of the five questions (in order from top to bottom). These are scores that indicate how compatible you are with me according to each question. Along with this, a percentage indicating your overall compatibility with me (Chuckie Gentile) will display. Under it, there will be a comment based on how like-minded we are. Good luck, and I hope you enjoy!</p>
 
     <label>Suits is one of the greatest TV shows of all time.</label><br />
     <select id="q1">
@@ -68,6 +68,13 @@
     <br /><br /><br />
 
     <button onclick="CalculateCompatibility()">Calculate Compatibility</button>
+
+    <p id="question 1 compatibility"></p>
+    <p id="question 2 compatibility"></p>
+    <p id="question 3 compatibility"></p>
+    <p id="question 4 compatibility"></p>
+    <p id="question 5 compatibility"></p>
+
     <p id="compatibility"></p>
 
     <p id="message"></p>
@@ -146,7 +153,13 @@ function CalculateCompatibility() {
     totalCompatibility = Math.round(totalCompatibility);
     console.log("tc=" + totalCompatibility);
 
-    document.getElementById("compatibility").innerHTML = "Your compatibility is: " + totalCompatibility;
+    document.getElementById("question 1 compatibility").innerHTML = "Your question 1 compatibility score is: " + question1Compatibility;
+    document.getElementById("question 2 compatibility").innerHTML = "Your question 2 compatibility score is: " + question2Compatibility;
+    document.getElementById("question 3 compatibility").innerHTML = "Your question 3 compatibility score is: " + question3Compatibility;
+    document.getElementById("question 4 compatibility").innerHTML = "Your question 4 compatibility score is: " + question4Compatibility;
+    document.getElementById("question 5 compatibility").innerHTML = "Your question 5 compatibility score is: " + question5Compatibility;
+
+    document.getElementById("compatibility").innerHTML = "Your total compatibility is: " + totalCompatibility;
 
     console.log("tc=" + totalCompatibility);
     if (totalCompatibility >= 90) {
